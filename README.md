@@ -18,10 +18,29 @@ Some instructions to read a not trivial TTree from a .root file using TTree::Mak
    Class_treename.C manages the Loop() function which is the main data analysis function.
    how access branches is write on the file itself. just notice that jentry and ientry are on tree indexes,
    so you gonna need an additional loop to read leaves. e.g. :
+   
    ```
    //in the main for Loop
        for (unsigned int i = 0; i < leaf->size(); i++) {
          h->Fill(leaf->at(i));
       }
    ```
-    
+3. Now assuming Loop() is written, in order to execute it open root terminal and execute it as following.
+
+   * add your .C file in library:
+      ```
+      .L Class_treename.C
+      ```
+   * create object of your new class, e.g. called 't'
+     ```
+      Class_treename t
+      ```
+   * now execute the Loop()
+     ```
+      t.Loop()
+      ```
+   * notice that t now contain all, so you can do some fast data check:
+     ```
+      t.fChain->Loop()
+      t.fChain->Print()
+      ```

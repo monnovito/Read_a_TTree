@@ -1,5 +1,5 @@
 # Read_a_TTree
-Some instructions to read a not trivial TTree from a .root file using TTree::MakeClass()
+Some instructions to read and manage not trivial TTree from a .root file using TTree::MakeClass()
 
 1. let's assume you got a .root with a TTree and ROOT working on your machine. 
    

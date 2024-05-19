@@ -41,6 +41,6 @@ Some instructions to read and manage not trivial TTree from a .root file using T
       ```
    * notice that t now contain all, so you can do some fast data check:
      ```
-      t.fChain->Loop()
+      t.fChain->Scan()
       t.fChain->Print()
       ```
